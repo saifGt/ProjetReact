@@ -1,15 +1,14 @@
 import { useState,useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+import Events from './Components/Events'
 import './App.css'
-import ClassComponent from './Components/classComponent'
-import FunctionComponent from './Components/FunctionComponent'
-import Methods from '../CourseComponent/classLifeCylce/methode'
-import Mouting from '../CourseComponent/classLifeCylce/Mounting'
-import Update  from '../CourseComponent/classLifeCylce/Updating'
-import Unmouting from '../CourseComponent/classLifeCylce/Unmounting'
-import Counter from '../../ExercicePropState/Counter'
-import ListManger from '../../ExercicePropState/listManger'
+import Counter from '../ExercicePropState/Counter'
+import ListManger from '../ExercicePropState/listManger'
+import ColorBox from '../ExercicePropState/ColorBox'
+import NotesManager from '../ExercicePropState/NoteManger'
+import TodoList from '../ExercicePropState/TodoList'
+import TodoListClass from '../ExercicePropState/TodoListClass'
 
 function App() {
 //   const [count, setCount] = useState(0)
@@ -70,6 +69,18 @@ function App() {
   [counter]
 )
   const listItems=["angular","react","node"]
+  const initialColor = "#FF5733";
+    const colorOptions = ["#FF5733", "#33FF57", "#3357FF", "#FFFF33", "#FF33FF"];
+    const initialNotes = [15, 18, 12]; // Notes initiales
+    const initialTasks = [
+      { name: "Faire les courses", priority: "Haute", completed: false },
+      { name: "Préparer le dîner", priority: "Moyenne", completed: true },
+      { name: "Lire un livre", priority: "Basse", completed: false },
+  ];
+
+  const TodoList =[{nom:"list1",priorite:"haute",etat:false},
+    {nom:"list2",priorite:"moyenne",etat:true}
+  ]
   return (
     <>
    {/* <FunctionComponent name="saif"></FunctionComponent>
@@ -88,8 +99,14 @@ function App() {
     <h1>le color {Color} backgrouned{backgrouned}</h1>
     <input type="text" onChange={e=>setColor(c=>({...c,Color:e.target.value}))}/>
     </> */}
-    <Counter step={1}></Counter>
-    <ListManger l={listItems} placeHold={"ecrire..."}></ListManger>
+    {/* <Counter step={1}></Counter>
+    <ListManger l={listItems} placeHold={"ecrire..."}></ListManger> */}
+    {/* <h1>Application React</h1>
+    <ColorBox initialColor={initialColor} colorOptions={colorOptions}></ColorBox> */}
+    {/* <NotesManager initialNotes={initialNotes}></NotesManager> 
+    <TodoList initialTasks={initialTasks}></TodoList> */}
+    {/* <TodoListClass todoParPametre={TodoList} ></TodoListClass> */}
+    <Events></Events>
     </>
   )
 }

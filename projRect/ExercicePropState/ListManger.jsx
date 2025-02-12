@@ -13,7 +13,7 @@ export default function ListManger(props){
 
         <ul>
         {list.map((item, index)=>(
-        <li key={index}>{item} <button onClick={()=>setnewItems(list.filter((_,i)=>i!==index))}>delete</button>  </li>
+        <li key={index}>{item} <button onClick={()=>setlist(list.filter((_,i)=>i!==index))}>delete</button>  </li>
     ) )}
 
             
